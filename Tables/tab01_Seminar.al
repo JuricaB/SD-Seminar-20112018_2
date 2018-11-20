@@ -62,12 +62,9 @@ table 50101 "CSD Seminar"
         field(90; "Comment"; Boolean)
         {
             Caption = 'Comment';
-            DataClassification = SystemMetadata;
             Editable = false;
-            //FieldClass=FlowField;
-            //CalcFormula=exist("Seminar Comment Line"
-            //where("Table Name"= const("Seminar"),
-            // "No."=Field("No.")));
+            FieldClass = FlowField;
+            CalcFormula = exist ("CSD Seminar Comment Line" where ("Table Name" = const ("Seminar"), "No." = Field ("No.")));
         }
         field(100; "Seminar Price"; Decimal)
         {
