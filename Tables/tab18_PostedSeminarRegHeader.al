@@ -1,10 +1,10 @@
-table 50118  "CSD Posted Seminar Reg. Header"
+table 50118 "CSD Posted Seminar Reg. Header"
 {
-// CSD1.00 - 2018-01-01 - D. E. Veloper
-// Chapter 7 - Lab 3-1
+    // CSD1.00 - 2018-01-01 - D. E. Veloper
+    // Chapter 7 - Lab 3-1
     Caption = 'Posted Seminar Reg. Header';
-    LookUpPageID= "CSD Posted Seminar Reg. List";
-    DrillDownPageID= "CSD Posted Seminar Reg. List";
+    LookUpPageID = "CSD Posted Seminar Reg. List";
+    DrillDownPageID = "CSD Posted Seminar Reg. List";
 
     Fields
     {
@@ -42,7 +42,7 @@ table 50118  "CSD Posted Seminar Reg. Header"
         {
             Caption = 'Status';
             OptionCaption = 'Planning,Registration,Closed,Canceled';
-            OptionMembers = Planning, Registration, Closed, Canceled;
+            OptionMembers = Planning,Registration,Closed,Canceled;
         }
         Field(8; Duration; Decimal)
         {
@@ -111,7 +111,7 @@ table 50118  "CSD Posted Seminar Reg. Header"
         Field(22; Comment; Boolean)
         {
             Caption = 'Comment';
-            CalcFormula = Exist ("CSD Seminar Comment Line" where ("Table Name" = const("Posted Seminar Registration"),
+            CalcFormula = Exist ("CSD Seminar Comment Line" where ("Table Name" = const ("Posted Seminar Registration"),
                                                               "No." = Field ("No.")));
             Editable = false;
             FieldClass = FlowField;
@@ -140,16 +140,16 @@ table 50118  "CSD Posted Seminar Reg. Header"
             Caption = 'Posting No. Series';
             TableRelation = "No. Series".Code;
         }
-        field(29;"User Id";Code[50])
+        field(29; "User Id"; Code[50])
         {
-            Caption='User Id';
-            TableRelation=User;
-            ValidateTableRelation=false;
+            Caption = 'User Id';
+            TableRelation = User;
+            ValidateTableRelation = false;
         }
-        field(30;"Source Code";Code[10])
+        field(30; "Source Code"; Code[10])
         {
-            Caption='Source Code';
-            TableRelation="Source Code";
+            Caption = 'Source Code';
+            TableRelation = "Source Code";
         }
     }
 
@@ -161,6 +161,9 @@ table 50118  "CSD Posted Seminar Reg. Header"
         key(Key2; "Room Resource No.")
         {
             SumIndexFields = Duration;
+        }
+        key(Key3; "Seminar No.", "Posting Date")
+        {
         }
     }
 }
