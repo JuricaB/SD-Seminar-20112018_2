@@ -1,6 +1,6 @@
 page 50113 "CSD Seminar Registration List"
 {
-    // CSD1.00 - 2018-01-01 - D. E. Veloper
+     // CSD1.00 - 2018-01-01 - D. E. Veloper
     //   Chapter 6 - Lab 3
     //     - Created new page
 
@@ -38,7 +38,7 @@ page 50113 "CSD Seminar Registration List"
                 field("Maximum Participants";"Maximum Participants")
                 {
                 }
-                field("Room Code";"Room Code")
+                field("Room Resource No.";"Room Resource No.")
                 {
                 }
             }
